@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://webservice_layer" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://webservice_layer" targetNamespace="http://webservice_layer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://webservice_layer">
+      <xsd:element name="updateCompetency">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="competency" type="impl:Competency" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Competency">
+        <xsd:sequence>
+          <xsd:element name="competency" nillable="true" type="xsd:string" />
+          <xsd:element name="id" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateCompetencyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="updateCompetencyReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createCompetency">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="competency" type="impl:Competency" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createCompetencyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="createCompetencyReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findCompetency">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Id" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findCompetencyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="findCompetencyReturn" type="impl:Competency" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteCompetency">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="competency" type="impl:Competency" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteCompetencyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="deleteCompetencyReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllCompetencies">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllCompetenciesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="getAllCompetenciesReturn" type="impl:Competency" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createCompetencyResponse">
+    <wsdl:part name="parameters" element="impl:createCompetencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateCompetencyRequest">
+    <wsdl:part name="parameters" element="impl:updateCompetency" />
+  </wsdl:message>
+  <wsdl:message name="createCompetencyRequest">
+    <wsdl:part name="parameters" element="impl:createCompetency" />
+  </wsdl:message>
+  <wsdl:message name="findCompetencyRequest">
+    <wsdl:part name="parameters" element="impl:findCompetency" />
+  </wsdl:message>
+  <wsdl:message name="deleteCompetencyRequest">
+    <wsdl:part name="parameters" element="impl:deleteCompetency" />
+  </wsdl:message>
+  <wsdl:message name="getAllCompetenciesRequest">
+    <wsdl:part name="parameters" element="impl:getAllCompetencies" />
+  </wsdl:message>
+  <wsdl:message name="findCompetencyResponse">
+    <wsdl:part name="parameters" element="impl:findCompetencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteCompetencyResponse">
+    <wsdl:part name="parameters" element="impl:deleteCompetencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllCompetenciesResponse">
+    <wsdl:part name="parameters" element="impl:getAllCompetenciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateCompetencyResponse">
+    <wsdl:part name="parameters" element="impl:updateCompetencyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CompetencyWebservice">
+    <wsdl:operation name="updateCompetency">
+      <wsdl:input name="updateCompetencyRequest" message="impl:updateCompetencyRequest" />
+      <wsdl:output name="updateCompetencyResponse" message="impl:updateCompetencyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createCompetency">
+      <wsdl:input name="createCompetencyRequest" message="impl:createCompetencyRequest" />
+      <wsdl:output name="createCompetencyResponse" message="impl:createCompetencyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findCompetency">
+      <wsdl:input name="findCompetencyRequest" message="impl:findCompetencyRequest" />
+      <wsdl:output name="findCompetencyResponse" message="impl:findCompetencyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCompetency">
+      <wsdl:input name="deleteCompetencyRequest" message="impl:deleteCompetencyRequest" />
+      <wsdl:output name="deleteCompetencyResponse" message="impl:deleteCompetencyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllCompetencies">
+      <wsdl:input name="getAllCompetenciesRequest" message="impl:getAllCompetenciesRequest" />
+      <wsdl:output name="getAllCompetenciesResponse" message="impl:getAllCompetenciesResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CompetencyWebserviceSoapBinding" type="impl:CompetencyWebservice">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="updateCompetency">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateCompetencyRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateCompetencyResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCompetency">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createCompetencyRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createCompetencyResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findCompetency">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="findCompetencyRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findCompetencyResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCompetency">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="deleteCompetencyRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteCompetencyResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCompetencies">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllCompetenciesRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllCompetenciesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CompetencyWebserviceService">
+    <wsdl:port name="CompetencyWebservice" binding="impl:CompetencyWebserviceSoapBinding">
+      <wsdlsoap:address location="http://localhost:8080/TMS/services/CompetencyWebservice" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

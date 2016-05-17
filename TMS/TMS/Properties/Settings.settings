@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TMS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TMS_localhost_CustomerWebserviceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:13990/TMS/services/CustomerWebservice</Value>
+    </Setting>
+    <Setting Name="TMS_localhost2_TestWebserviceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:13990/TMS/services/TestWebservice</Value>
+    </Setting>
+    <Setting Name="TMS_localhostCompetency_CompetencyWebserviceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/TMS/services/CompetencyWebservice</Value>
+    </Setting>
+    <Setting Name="TMS_localhostEmployee_EmployeeWebserviceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/TMS/services/EmployeeWebservice</Value>
+    </Setting>
+    <Setting Name="TMS_localhostEC_EmployeeCompetencyWebserviceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/TMS/services/EmployeeCompetencyWebservice</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

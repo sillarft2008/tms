@@ -1,0 +1,15 @@
+﻿@model TMS.ViewModels.EmployeeCompetencyViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Register Employee</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        @Html.AntiForgeryToken()
+        @Html.Partial("EmployeeCompetencyViewModel")
+
+    }

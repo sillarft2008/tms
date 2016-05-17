@@ -1,0 +1,83 @@
+﻿@model IEnumerable<TMS.Models.Test>
+
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            0900
+        </th>
+        <th>
+            0930
+        </th>
+        <th>
+            1000
+        </th>
+        <th>
+            1030
+        </th>
+        <th>
+            1100
+        </th>
+        <th>
+            1130
+        </th>
+        <th>
+            1200
+        </th>
+        <th>
+            1230
+        </th>
+        <th>
+            1300
+        </th>
+        <th>
+            1330
+        </th>
+        <th>
+            1400
+        </th>
+        <th>
+            1430
+        </th>
+        <th>
+            1500
+        </th>
+        <th>
+            1530
+        </th>
+        <th>
+            1600
+        </th>
+        <th>
+            1630
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            @foreach (var item2 in item.task)
+            {
+            <td>
+                @Html.DisplayFor(modelItem => item2)
+             </td>
+            }
+</tr>
+    }
+
+</table>

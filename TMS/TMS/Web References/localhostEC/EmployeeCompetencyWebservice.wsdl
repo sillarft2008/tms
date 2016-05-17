@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://webservice_layer" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://webservice_layer" targetNamespace="http://webservice_layer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://webservice_layer">
+      <xsd:element name="createEmployeeCompetency">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ec" type="impl:EmployeeCompetency" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="EmployeeCompetency">
+        <xsd:sequence>
+          <xsd:element name="competencyId" type="xsd:int" />
+          <xsd:element name="employeeId" type="xsd:int" />
+          <xsd:element name="id" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createEmployeeCompetencyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="createEmployeeCompetencyReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteEmployeeCompetency">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ec" type="impl:EmployeeCompetency" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteEmployeeCompetencyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="deleteEmployeeCompetencyReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findEmployeeCompetency">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Id" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findEmployeeCompetencyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="findEmployeeCompetencyReturn" type="impl:EmployeeCompetency" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateEmployeeCompetency">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ec" type="impl:EmployeeCompetency" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateEmployeeCompetencyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="updateEmployeeCompetencyReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findAllEmployeeCompetencies">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Id" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findAllEmployeeCompetenciesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="findAllEmployeeCompetenciesReturn" type="impl:EmployeeCompetency" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllEmployeeCompetencies">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllEmployeeCompetenciesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="getAllEmployeeCompetenciesReturn" type="impl:EmployeeCompetency" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="findAllEmployeeCompetenciesResponse">
+    <wsdl:part name="parameters" element="impl:findAllEmployeeCompetenciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllEmployeeCompetenciesRequest">
+    <wsdl:part name="parameters" element="impl:getAllEmployeeCompetencies" />
+  </wsdl:message>
+  <wsdl:message name="getAllEmployeeCompetenciesResponse">
+    <wsdl:part name="parameters" element="impl:getAllEmployeeCompetenciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteEmployeeCompetencyRequest">
+    <wsdl:part name="parameters" element="impl:deleteEmployeeCompetency" />
+  </wsdl:message>
+  <wsdl:message name="updateEmployeeCompetencyRequest">
+    <wsdl:part name="parameters" element="impl:updateEmployeeCompetency" />
+  </wsdl:message>
+  <wsdl:message name="findAllEmployeeCompetenciesRequest">
+    <wsdl:part name="parameters" element="impl:findAllEmployeeCompetencies" />
+  </wsdl:message>
+  <wsdl:message name="deleteEmployeeCompetencyResponse">
+    <wsdl:part name="parameters" element="impl:deleteEmployeeCompetencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateEmployeeCompetencyResponse">
+    <wsdl:part name="parameters" element="impl:updateEmployeeCompetencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="createEmployeeCompetencyResponse">
+    <wsdl:part name="parameters" element="impl:createEmployeeCompetencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="findEmployeeCompetencyRequest">
+    <wsdl:part name="parameters" element="impl:findEmployeeCompetency" />
+  </wsdl:message>
+  <wsdl:message name="createEmployeeCompetencyRequest">
+    <wsdl:part name="parameters" element="impl:createEmployeeCompetency" />
+  </wsdl:message>
+  <wsdl:message name="findEmployeeCompetencyResponse">
+    <wsdl:part name="parameters" element="impl:findEmployeeCompetencyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EmployeeCompetencyWebservice">
+    <wsdl:operation name="createEmployeeCompetency">
+      <wsdl:input name="createEmployeeCompetencyRequest" message="impl:createEmployeeCompetencyRequest" />
+      <wsdl:output name="createEmployeeCompetencyResponse" message="impl:createEmployeeCompetencyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEmployeeCompetency">
+      <wsdl:input name="deleteEmployeeCompetencyRequest" message="impl:deleteEmployeeCompetencyRequest" />
+      <wsdl:output name="deleteEmployeeCompetencyResponse" message="impl:deleteEmployeeCompetencyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findEmployeeCompetency">
+      <wsdl:input name="findEmployeeCompetencyRequest" message="impl:findEmployeeCompetencyRequest" />
+      <wsdl:output name="findEmployeeCompetencyResponse" message="impl:findEmployeeCompetencyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateEmployeeCompetency">
+      <wsdl:input name="updateEmployeeCompetencyRequest" message="impl:updateEmployeeCompetencyRequest" />
+      <wsdl:output name="updateEmployeeCompetencyResponse" message="impl:updateEmployeeCompetencyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findAllEmployeeCompetencies">
+      <wsdl:input name="findAllEmployeeCompetenciesRequest" message="impl:findAllEmployeeCompetenciesRequest" />
+      <wsdl:output name="findAllEmployeeCompetenciesResponse" message="impl:findAllEmployeeCompetenciesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllEmployeeCompetencies">
+      <wsdl:input name="getAllEmployeeCompetenciesRequest" message="impl:getAllEmployeeCompetenciesRequest" />
+      <wsdl:output name="getAllEmployeeCompetenciesResponse" message="impl:getAllEmployeeCompetenciesResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EmployeeCompetencyWebserviceSoapBinding" type="impl:EmployeeCompetencyWebservice">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createEmployeeCompetency">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createEmployeeCompetencyRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createEmployeeCompetencyResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEmployeeCompetency">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="deleteEmployeeCompetencyRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteEmployeeCompetencyResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findEmployeeCompetency">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="findEmployeeCompetencyRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findEmployeeCompetencyResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEmployeeCompetency">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateEmployeeCompetencyRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateEmployeeCompetencyResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllEmployeeCompetencies">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="findAllEmployeeCompetenciesRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findAllEmployeeCompetenciesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllEmployeeCompetencies">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllEmployeeCompetenciesRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllEmployeeCompetenciesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmployeeCompetencyWebserviceService">
+    <wsdl:port name="EmployeeCompetencyWebservice" binding="impl:EmployeeCompetencyWebserviceSoapBinding">
+      <wsdlsoap:address location="http://localhost:8080/TMS/services/EmployeeCompetencyWebservice" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
